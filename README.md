@@ -1,5 +1,5 @@
 # workshop-3
-show the list of titles + links from https://edition.cnn.com/
+Show the list of titles with links from https://edition.cnn.com/
 
 ```
 const results = Array.prototype.map.call(document.querySelectorAll('.cd--card'), (el => {
@@ -8,7 +8,7 @@ const results = Array.prototype.map.call(document.querySelectorAll('.cd--card'),
     return {text, link};
 }))
 
-const body = document.getElementsByTagName('BODY')[0]
+const body = document.getElementsByTagName('BODY')[0];
 
 body.innerHTML = '';
 
@@ -18,6 +18,6 @@ for (let i = 8; i < 20; i++) {
     newlink.setAttribute("href", results[i].link);
     newlink.textContent = results[i].text;
     list.appendChild(newlink);
-    body.appendChild(list)
+    body.appendChild(list);
 }
 ```
