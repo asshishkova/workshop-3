@@ -1,1 +1,21 @@
 # workshop-3
+show the list of titles + links from https://edition.cnn.com/
+
+```
+const results = Array.prototype.map.call(document.querySelectorAll('.cd--card'), (el => {
+    const text = el.innerText;
+    const link = el.querySelector('a')?.href;
+    return {text, link};
+}))
+
+const body = document.getElementsByTagName('BODY')[0]
+
+body.innerHTML = ''
+
+for (let i = 8; i < 20; i++) {
+    const list = document.createElement("li");
+    const title = document.createTextNode(results[i].text);
+    list.appendChild(title);
+    body.appendChild(list)
+}
+```
